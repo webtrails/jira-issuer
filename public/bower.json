@@ -1,0 +1,21 @@
+{
+  "name": "react-starter-app",
+  "main": "app.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/kabitakis/react-starter-app",
+  "authors": [
+    "Nikos Kampitakis"
+  ],
+  "description": "A starter/skeleton web application built with Node, Express and React.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}

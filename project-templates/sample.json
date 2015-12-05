@@ -1,0 +1,20 @@
+[
+	{
+		"summary": "Setup staging environment",
+    "reporter": "user1",
+    "assignee": "user2",
+		"description": "Build and configure a new server and setup the CI environment.",
+		"type": "Task",
+		"labels" : ["test-label-1", "test-label-2"],
+    "priority": "Major"
+	},
+	{
+		"summary": "Checklist",
+    "reporter": "user3",
+    "assignee": "user4",
+		"description": "Review the checklist items.",
+		"type": "Story",
+		"labels": ["test-label-3"],
+    "priority": "Major"
+	}
+]

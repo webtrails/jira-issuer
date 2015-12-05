@@ -1,0 +1,50 @@
+{
+  "name": "jira-issuer",
+  "version": "1.0.0",
+  "description": "A helper web application to create bulk JIRA issues based on JSON template files.",
+  "main": "app.js",
+  "scripts": {
+    "start": "NODE_ENV=production JIRA_PASSWORD=$(< .env) node app.js",
+    "dev": "NODE_ENV=local JIRA_PASSWORD=$(< .env) node app.js",
+    "debug": "NODE_ENV=local JIRA_PASSWORD=$(< .env) node --debug app.js",
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:webtrails/jira-issuer.git"
+  },
+  "keywords": [
+    "node",
+    "express`",
+    "react",
+    "starter",
+    "skeleton",
+    "isomorphic"
+  ],
+  "author": "Nikos Kampitakis, Petros Koumantarakis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webtrails/jira-issuer/issues"
+  },
+  "homepage": "https://github.com/webtrails/jira-issuer",
+  "dependencies": {
+    "async": "^1.4.2",
+    "browserify": "^12.0.1",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "jira": "^0.9.2",
+    "lodash": "^3.10.1",
+    "moment": "^2.10.6",
+    "node-jsx": "^0.13.3",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-engine": "^2.6.0",
+    "react-router": "^0.13.5",
+    "reactify": "^1.1.1"
+  },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  }
+}
