@@ -34,3 +34,6 @@ node_modules
 
 # Browserify generated js file
 bundle.js
+
+# My project templates
+project-templates/wt-*.json
