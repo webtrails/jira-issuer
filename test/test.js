@@ -1,8 +1,10 @@
+// @flow
+
 import test from 'ava';
-import greet from '../lib';
+import add from '../src';
 
 test('foo', t => {
-  t.is(greet({ firstName: 'john', lastName: 'smith'}), 'hello john, smith');
+  t.is(add(2, 2), 4);
 });
 
 test('bar', async t => {
@@ -10,4 +12,6 @@ test('bar', async t => {
   t.is(await bar, 'bar');
 });
 
-test.todo('this must be done');
+test.skip('this must be done', t => {
+  t.fail();
+});

@@ -1,19 +1,20 @@
 {
-    "extends": [
-      "airbnb-base",
-      "prettier",
-      "prettier/flowtype"
-    ],
-    "plugins": [
-      "prettier"
-    ],
-    "env": {
-      "browser": false,
-      "node": true,
-      "es6": true,
-    },
-    "rules": {
-      "max-len": ["error", { "code": 120 }],
-      "prettier/prettier": ["error", {"trailingComma": "es5", "singleQuote": true}]
-    }
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb-base",
+    "prettier",
+    "prettier/flowtype"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "env": {
+    "browser": false,
+    "node": true,
+    "es6": true,
+  },
+  "rules": {
+    "max-len": ["error", { "code": 120 }],
+    "prettier/prettier": ["error", {"trailingComma": "es5", "singleQuote": true}]
+  }
 }
