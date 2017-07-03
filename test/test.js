@@ -1,7 +1,8 @@
 import test from 'ava';
+import greet from '../lib';
 
 test('foo', t => {
-  t.is(true, true);
+  t.is(greet({ firstName: 'john', lastName: 'smith'}), 'hello john, smith');
 });
 
 test('bar', async t => {
