@@ -1,50 +1,45 @@
 {
   "name": "jira-issuer",
   "version": "1.0.0",
-  "description": "A helper web application to create bulk JIRA issues based on JSON template files.",
-  "main": "app.js",
-  "scripts": {
-    "start": "NODE_ENV=production JIRA_PASSWORD=$(< .env) node app.js",
-    "dev": "NODE_ENV=local JIRA_PASSWORD=$(< .env) node app.js",
-    "debug": "NODE_ENV=local JIRA_PASSWORD=$(< .env) node --debug app.js",
-    "test": "gulp test"
-  },
+  "private": true,
+  "description": "A command line tool to create bulk JIRA issues based on JSON template files.",
+  "author": "Nikolas Vourlakis <nvourlakis@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git@github.com:webtrails/jira-issuer.git"
   },
-  "keywords": [
-    "node",
-    "express`",
-    "react",
-    "starter",
-    "skeleton",
-    "isomorphic"
+  "bugs": "https://github.com/webtrails/jira-issuer/issues",
+  "main": "app.js",
+  "files": [
+    "bin/",
+    "config/",
+    "lib/"
   ],
-  "author": "Nikos Kampitakis, Petros Koumantarakis",
+  "scripts": {
+    "lint": "eslint bin lib test",
+  },
+  "engines": {
+    "node": ">= 8"
+  },
+  "directories": {
+    "bin": "bin",
+    "lib": "lib",
+    "test": "test"
+  },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/webtrails/jira-issuer/issues"
-  },
-  "homepage": "https://github.com/webtrails/jira-issuer",
   "dependencies": {
-    "async": "^1.4.2",
-    "browserify": "^12.0.1",
-    "express": "^4.13.3",
-    "express-session": "^1.12.1",
-    "jira": "^0.9.2",
-    "lodash": "^3.10.1",
-    "moment": "^2.10.6",
-    "node-jsx": "^0.13.3",
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3",
-    "react-engine": "^2.6.0",
-    "react-router": "^0.13.5",
-    "reactify": "^1.1.1"
+    "jira": "^0.9.2"
   },
-  "browserify": {
-    "transform": [
-      "reactify"
-    ]
+  "keywords": [
+    "jira",
+    "cli"
+  ],
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-prettier": "^2.1.2",
+    "prettier": "^1.5.2"
   }
 }
