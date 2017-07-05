@@ -1,5 +1,7 @@
+/* eslint-disable no-console */
 const program = require('commander');
 const inquirer = require('inquirer');
+const execute = require('../lib');
 
 function isStringEmpty(value) {
   return !value || value.length === 0;
@@ -25,6 +27,12 @@ async function processUserInput(options) {
     },
     {
       type: 'input',
+      name: 'project',
+      message: 'jira project id',
+      when: () => isStringEmpty(options.project),
+    },
+    {
+      type: 'input',
       name: 'username',
       message: 'username',
       when: () => isStringEmpty(options.username),
@@ -36,24 +44,18 @@ async function processUserInput(options) {
       when: () => isStringEmpty(options.password),
     },
     {
-      type: 'list',
-      name: 'jiraType',
-      message: 'Create JIRA issues',
-      choices: ['wordpress', 'custom'],
-    },
-    {
       type: 'comfirm',
       name: 'submit',
       default: 'no',
       message({
         template = options.template,
+        project = options.project,
         host = options.host,
         port = options.port,
         username = options.username,
-        jiraType,
       }) {
         const answers = {
-          jiraType,
+          project,
           template,
           host,
           port,
@@ -71,7 +73,7 @@ async function processUserInput(options) {
 
   const answers = await inquirer.prompt(questions);
   const {
-    jiraType,
+    project = options.project,
     template = options.template,
     host = options.host,
     port = options.port,
@@ -83,15 +85,21 @@ async function processUserInput(options) {
   if (['n', 'N', 'no', 'No', 'nO', 'NO'].includes(submit)) {
     console.log('Aborted!');
   } else {
-    console.log({
-      jiraType,
-      template,
-      host,
-      port,
-      username,
-      password,
-      submit,
-    });
+    try {
+      const result = await execute({
+        jiraConfig: { hostname: host, port, auth: { username, password } },
+        project,
+        template,
+      });
+
+      console.log(
+        `Created the following issues in the project ${project}:`,
+        result.data.issues.map(issue => issue.key).join(', ')
+      );
+    } catch (error) {
+      console.log('Aborted with error');
+      console.dir(error.response.data, { depth: null, colors: true });
+    }
   }
 }
 
@@ -109,6 +117,7 @@ program
     '-t, --template <template.json>',
     'the template file in JSON format to be used in JIRA issue generation'
   )
+  .option('--project <project_id>', 'the JIRA project id, e.g. TEST')
   .parse(process.argv);
 
 processUserInput(program);
