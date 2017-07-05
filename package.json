@@ -16,17 +16,9 @@
     "lib/"
   ],
   "scripts": {
-    "lint": "eslint src test",
-    "check": "flow check",
+    "lint": "eslint lib test bin",
     "test": "NODE_ENV=testing ava",
-    "coverage": "NODE_ENV=testing nyc ava",
-    "build": "npm run lint && rm -rf lib/* && babel src -d lib"
-  },
-  "ava": {
-    "require": "babel-register",
-    "babel": {
-      "babelrc": true
-    }
+    "coverage": "NODE_ENV=testing nyc ava"
   },
   "engines": {
     "node": ">= 8"
@@ -42,6 +34,7 @@
     "cli"
   ],
   "dependencies": {
+    "axios": "^0.16.2",
     "chalk": "^2.0.1",
     "commander": "^2.11.0",
     "inquirer": "^3.1.1",
@@ -49,15 +42,11 @@
   },
   "devDependencies": {
     "ava": "^0.20.0",
-    "babel-cli": "^6.24.1",
-    "babel-eslint": "^7.2.3",
-    "babel-preset-flow": "^6.23.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-import": "^2.6.1",
     "eslint-plugin-prettier": "^2.1.2",
-    "flow-bin": "^0.49.1",
     "nyc": "^11.0.3",
     "prettier": "^1.5.2"
   }
