@@ -1,4 +1,4 @@
-# Jira Issuer
+# JIRA Issuer
 
 A command line tool to create bulk JIRA issues based on JSON template files.
 
@@ -27,6 +27,17 @@ node bin/cli.js --host company.atlassian.net \
                 --project FANTASTICPROJECT \
                 -t /path/to/template
 ```
+
+## Creating a template
+
+A JSON file that will as project template must be created. You can see an example in the folder `/project-templates`. The template consists of two parts, `issues` and `links`.
+
+The property `issues` holds an array of issues to be created. Each element of the array has the following properties:
+* `refId`: This is a **unique** id given by you. This is used later on in the links.
+* `fields`: Contains all the issue properties that are enabled in the JIRA platform. This follows the structure found in the atlassian documentation about [issue creation](https://docs.atlassian.com/jira/REST/7.4.0/#api/2/issue-createIssue).
+* `subTasks`: This is an array containing issues with the `fields` and `refId` properties as described above. The issue described in the `fields`, sibling to `subTasks`, is the parent issue. It is an error if that issue is not of type *Task*.
+
+The property `links` holds an array. The structure follows that found in the documentation about [link creation](https://docs.atlassian.com/jira/REST/7.4.0/#api/2/issueLink-linkIssues). The only difference is in the properties `inwardIssue` and `outwardIssue`. Since the JIRA issue keys are not known prior creation, the `refId` will be used.
 
 ## Installation
 
