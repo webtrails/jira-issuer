@@ -86,13 +86,14 @@ async function processUserInput(options) {
     console.log('Aborted!');
   } else {
     try {
-      await execute({
+      const result = await execute({
         jiraConfig: { hostname: host, port, auth: { username, password } },
         project,
         template,
       });
 
       console.log(`Finished creating issues for the project ${project}`);
+      console.dir(result, { depth: null, colors: true });
     } catch (error) {
       console.log('Aborted with error');
       console.dir(error, { depth: null, colors: true });

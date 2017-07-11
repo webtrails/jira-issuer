@@ -1,9 +1,34 @@
 {
+  "epics": [
+    {
+      "refId": "designs_epic_1",
+      "fields": {
+        "epicName": "designs",
+        "summary": "EPIC 1",
+        "issuetype": { "name": "Epic" },
+        "priority": { "name": "Major" },
+        "reporter": { "name": "nikolas" },
+        "description": "This is a test epic"
+      }
+    },
+    {
+      "refId": "devops_epic_2",
+      "fields": {
+        "epicName": "devops",
+        "summary": "EPIC 1",
+        "issuetype": { "name": "Epic" },
+        "priority": { "name": "Major" },
+        "reporter": { "name": "nikolas" },
+        "description": "This is a test epic"
+      }
+    }
+  ],
+
   "issues": [
     {
       "refId": "test_1",
+      "epicId": "designs_epic_1",
       "fields": {
-        "project": { "key": "TEST" },
         "summary": "ISSUE 1",
         "issuetype": { "name": "Task" },
         "priority": { "name": "Major" },
@@ -27,6 +52,7 @@
     },
     {
       "refId": "test_2",
+      "epicId": "devops_epic_2",
       "fields": {
         "summary": "ISSUE 2",
         "issuetype": { "name": "Bug" },
@@ -45,6 +71,17 @@
         "reporter": { "name": "nikolas" },
         "description": "This is a test issue",
         "labels": ["test-label-3"]
+      }
+    },
+    {
+      "refId": "test_4",
+      "epicId": "devops_epic_2",
+      "fields": {
+        "summary": "ISSUE 4",
+        "issuetype": { "name": "Task" },
+        "priority": { "name": "Major" },
+        "reporter": { "name": "nikolas" },
+        "description": "This is a test issue"
       }
     }
   ],
