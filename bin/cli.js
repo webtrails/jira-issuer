@@ -95,7 +95,7 @@ async function processUserInput(options) {
       console.log(`Finished creating issues for the project ${project}`);
     } catch (error) {
       console.log('Aborted with error');
-      console.dir(error.response.data, { depth: null, colors: true });
+      console.dir(error, { depth: null, colors: true });
     }
   }
 }

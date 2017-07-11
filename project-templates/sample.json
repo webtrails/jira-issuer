@@ -1,23 +1,66 @@
-[
-  {
-    "fields": {
-      "project": { "key": "TEST" },
-      "summary": "HELLO BULK 1",
-      "issuetype": { "name": "Bug" },
-      "priority": { "name": "Major" },
-      "reporter": { "name": "nikolas" },
-      "description": "This is a test bulk issue",
-      "labels": ["test-label-3"]
+{
+  "issues": [
+    {
+      "refId": "test_1",
+      "fields": {
+        "project": { "key": "TEST" },
+        "summary": "ISSUE 1",
+        "issuetype": { "name": "Task" },
+        "priority": { "name": "Major" },
+        "reporter": { "name": "nikolas" },
+        "description": "This is a test issue",
+        "labels": ["test-label-3"]
+      },
+      "subTasks": [
+        {
+          "refId": "test_1_1",
+          "fields": {
+            "summary": "ISSUE: SUB TASK 1",
+            "issuetype": { "name": "Sub-task" },
+            "priority": { "name": "Major" },
+            "reporter": { "name": "nikolas" },
+            "description": "This is a test issue",
+            "labels": ["test-label-3"]
+          }
+        }
+      ]
+    },
+    {
+      "refId": "test_2",
+      "fields": {
+        "summary": "ISSUE 2",
+        "issuetype": { "name": "Bug" },
+        "priority": { "name": "Major" },
+        "reporter": { "name": "nikolas" },
+        "description": "This is a test issue",
+        "labels": ["test-label-3"]
+      }
+    },
+    {
+      "refId": "test_3",
+      "fields": {
+        "summary": "ISSUE 3",
+        "issuetype": { "name": "Bug" },
+        "priority": { "name": "Major" },
+        "reporter": { "name": "nikolas" },
+        "description": "This is a test issue",
+        "labels": ["test-label-3"]
+      }
     }
-  },
-  {
-    "fields": {
-      "summary": "HELLO BULK 2",
-      "issuetype": { "name": "Bug" },
-      "priority": { "name": "Major" },
-      "reporter": { "name": "nikolas" },
-      "description": "This is a test bulk issue",
-      "labels": ["test-label-3"]
+  ],
+
+  "links": [
+    {
+      "type": { "name": "Blocks" },
+      "inwardIssue": "test_1_1",
+      "outwardIssue": "test_3",
+      "comment": { "body": "Issue test_1 blocks test_3" }
+    },
+    {
+      "type": { "name": "Relates" },
+      "inwardIssue": "test_2",
+      "outwardIssue": "test_3",
+      "comment": { "body": "Issue test_2 is related to test_3" }
     }
-  }
-]
+  ]
+}
