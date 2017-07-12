@@ -1,9 +1,22 @@
 {
   "name": "jira-issuer",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "description": "A command line tool to create bulk JIRA issues based on JSON template files.",
-  "author": "Nikolas Vourlakis <nvourlakis@gmail.com>",
+  "author": {
+    "name": "Nikos Kampitakis",
+    "email": "nikos@webtrails.gr"
+  },
+  "contributors":[
+    {
+      "name": "Nikolas Vourlakis",
+      "email": "nikolas@webtrails.gr"
+    },
+    {
+      "name": "Petros Koumantarakis",
+      "email": "petros@webtrails.gr"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:webtrails/jira-issuer.git"
