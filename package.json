@@ -7,7 +7,7 @@
     "name": "Nikos Kampitakis",
     "email": "nikos@webtrails.gr"
   },
-  "contributors":[
+  "contributors": [
     {
       "name": "Nikolas Vourlakis",
       "email": "nikolas@webtrails.gr"
@@ -22,10 +22,12 @@
     "url": "git@github.com:webtrails/jira-issuer.git"
   },
   "bugs": "https://github.com/webtrails/jira-issuer/issues",
-  "main": "app.js",
+  "main": "./lib/index.js",
+  "bin": {
+    "jira-issuer": "./bin/cli.js"
+  },
   "files": [
     "bin/",
-    "config/",
     "lib/"
   ],
   "scripts": {
@@ -37,9 +39,8 @@
     "node": ">= 8"
   },
   "directories": {
-    "bin": "bin",
-    "lib": "lib",
-    "test": "test"
+    "bin": "./bin",
+    "lib": "./lib"
   },
   "license": "MIT",
   "keywords": [
