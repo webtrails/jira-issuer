@@ -1,5 +1,5 @@
 {
-  "name": "jira-issuer",
+  "name": "@webtrails/jira-issuer",
   "version": "1.0.0",
   "private": false,
   "description": "A command line tool to create bulk JIRA issues based on JSON template files.",
