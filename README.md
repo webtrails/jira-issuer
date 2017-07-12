@@ -1,6 +1,11 @@
 # JIRA Issuer
 
-A command line tool to create bulk JIRA issues based on JSON template files.
+A command line tool to create bulk JIRA issues based on JSON template files. It also supports epics, subtasks and links between the issues.
+
+## Use cases
+
+1. Does your company provide a solution or a service - a package - which requires a team of professionals in order to be prepared and implemented? For example "ERP system migration to newer servers". The price is fixed, the steps are well defined and you have to do the process for all your clients once a year. Jira-issuer provides a way to create the necessary tickets just by running a simple command on a predefined JSON template file. It's the fastest way to convert a new sale/contract/need/feature/package into action items for your team.
+2. In case you need to follow the same process periodically you can simply add the command in a cron job and new tickets will be created, linked and assigned to your team in time.
 
 ## Usage
 
