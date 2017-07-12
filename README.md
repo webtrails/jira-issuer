@@ -30,12 +30,17 @@ node bin/cli.js --host company.atlassian.net \
 
 ## Creating a template
 
-A JSON file that will as project template must be created. You can see an example in the folder `/project-templates`. The template consists of two parts, `issues` and `links`.
+A JSON file that will as project template must be created. You can see an example in the folder `/project-templates`. The template consists of three parts, `epics`, `issues` and `links`.
 
 The property `issues` holds an array of issues to be created. Each element of the array has the following properties:
-* `refId`: This is a **unique** id given by you. This is used later on in the links.
+* `refId`: This is a **unique** id given by you.
+* `epicId` (optional): This holds as a value the `refId` of the epic that this issue belongs to.
 * `fields`: Contains all the issue properties that are enabled in the JIRA platform. This follows the structure found in the atlassian documentation about [issue creation](https://docs.atlassian.com/jira/REST/7.4.0/#api/2/issue-createIssue).
 * `subTasks`: This is an array containing issues with the `fields` and `refId` properties as described above. The issue described in the `fields`, sibling to `subTasks`, is the parent issue. It is an error if that issue is not of type *Task*.
+
+The property `epics` holds and array of epic issues and each one has the following properties:
+* `refId`: This is a **unique** id given by you.
+* `fields`: Contains all the issue properties that are enabled in the JIRA platform. This follows the structure found in the atlassian documentation about [issue creation](https://docs.atlassian.com/jira/REST/7.4.0/#api/2/issue-createIssue).
 
 The property `links` holds an array. The structure follows that found in the documentation about [link creation](https://docs.atlassian.com/jira/REST/7.4.0/#api/2/issueLink-linkIssues). The only difference is in the properties `inwardIssue` and `outwardIssue`. Since the JIRA issue keys are not known prior creation, the `refId` will be used.
 
