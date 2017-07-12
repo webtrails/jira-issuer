@@ -2,6 +2,8 @@
 
 A command line tool to create bulk JIRA issues based on JSON template files. It also supports epics, subtasks and links between the issues.
 
+Install with `npm install --global @webtrails/jira-issuer`
+
 ## Use cases
 
 1. Does your company provide a solution or a service - a package - which requires a team of professionals in order to be prepared and implemented? For example "ERP system migration to newer servers". The price is fixed, the steps are well defined and you have to do the process for all your clients once a year. Jira-issuer provides a way to create the necessary tickets just by running a simple command on a predefined JSON template file. It's the fastest way to convert a new sale/contract/need/feature/package into action items for your team.
@@ -25,12 +27,12 @@ The tool accepts the following arguments which are all mandatory:
 For example:
 
 ```bash
-node bin/cli.js --host company.atlassian.net \
-                --port 443 \
-                -u user \
-                -p secret \
-                --project FANTASTICPROJECT \
-                -t /path/to/template
+jira-issuer --host company.atlassian.net \
+            --port 443 \
+            -u user \
+            -p secret \
+            --project FANTASTICPROJECT \
+            -t /path/to/template
 ```
 
 ## Creating a template
@@ -49,11 +51,9 @@ The property `epics` holds and array of epic issues and each one has the followi
 
 The property `links` holds an array. The structure follows that found in the documentation about [link creation](https://docs.atlassian.com/jira/REST/7.4.0/#api/2/issueLink-linkIssues). The only difference is in the properties `inwardIssue` and `outwardIssue`. Since the JIRA issue keys are not known prior creation, the `refId` will be used.
 
-## Installation
-
-Clone the repository and execute `npm install` to install dependencies
-
 ## Contributing
+
+Clone the repository and execute `npm install` to install dependencies.
 
 In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. The project automates these tasks through npm scripts.
 
