@@ -1,0 +1,1217 @@
+{
+  "scope": "https://test.atlassian.net:443",
+  "method": "get",
+  "path": "/rest/api/2/issue/createmeta?projectKeys=TEST&expand=projects.issuetypes.fields",
+  "body": "",
+  "status": 200,
+  "response": {
+    "expand": "projects",
+    "projects": [
+      {
+        "expand": "issuetypes",
+        "self": "https://test.atlassian.net/rest/api/2/project/12500",
+        "id": "12500",
+        "key": "TEST",
+        "name": "TEST",
+        "avatarUrls": {
+          "48x48": "https://test.atlassian.net/secure/projectavatar?pid=12500&avatarId=10011",
+          "24x24": "https://test.atlassian.net/secure/projectavatar?size=small&pid=12500&avatarId=10011",
+          "16x16": "https://test.atlassian.net/secure/projectavatar?size=xsmall&pid=12500&avatarId=10011",
+          "32x32": "https://test.atlassian.net/secure/projectavatar?size=medium&pid=12500&avatarId=10011"
+        },
+        "issuetypes": [
+          {
+            "self": "https://test.atlassian.net/rest/api/2/issuetype/3",
+            "id": "3",
+            "description": "A task that needs to be done.",
+            "iconUrl": "https://test.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+            "name": "Task",
+            "subtask": false,
+            "expand": "fields",
+            "fields": {
+              "summary": {
+                "required": true,
+                "schema": { "type": "string", "system": "summary" },
+                "name": "Summary",
+                "key": "summary",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "issuetype": {
+                "required": true,
+                "schema": { "type": "issuetype", "system": "issuetype" },
+                "name": "Issue Type",
+                "key": "issuetype",
+                "hasDefaultValue": false,
+                "operations": [],
+                "allowedValues": [
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/issuetype/3",
+                    "id": "3",
+                    "description": "A task that needs to be done.",
+                    "iconUrl": "https://test.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+                    "name": "Task",
+                    "subtask": false,
+                    "avatarId": 10318
+                  }
+                ]
+              },
+              "components": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "component",
+                  "system": "components"
+                },
+                "name": "Component/s",
+                "key": "components",
+                "hasDefaultValue": false,
+                "operations": ["add", "set", "remove"],
+                "allowedValues": []
+              },
+              "description": {
+                "required": false,
+                "schema": { "type": "string", "system": "description" },
+                "name": "Description",
+                "key": "description",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "project": {
+                "required": true,
+                "schema": { "type": "project", "system": "project" },
+                "name": "Project",
+                "key": "project",
+                "hasDefaultValue": false,
+                "operations": ["set"],
+                "allowedValues": [
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/project/12500",
+                    "id": "12500",
+                    "key": "TEST",
+                    "name": "TEST",
+                    "projectTypeKey": "software",
+                    "avatarUrls": {
+                      "48x48": "https://test.atlassian.net/secure/projectavatar?pid=12500&avatarId=10011",
+                      "24x24": "https://test.atlassian.net/secure/projectavatar?size=small&pid=12500&avatarId=10011",
+                      "16x16": "https://test.atlassian.net/secure/projectavatar?size=xsmall&pid=12500&avatarId=10011",
+                      "32x32": "https://test.atlassian.net/secure/projectavatar?size=medium&pid=12500&avatarId=10011"
+                    }
+                  }
+                ]
+              },
+              "reporter": {
+                "required": true,
+                "schema": { "type": "user", "system": "reporter" },
+                "name": "Reporter",
+                "key": "reporter",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/latest/user/search?query=",
+                "hasDefaultValue": true,
+                "operations": ["set"]
+              },
+              "fixVersions": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "version",
+                  "system": "fixVersions"
+                },
+                "name": "Fix Version/s",
+                "key": "fixVersions",
+                "hasDefaultValue": false,
+                "operations": ["set", "add", "remove"],
+                "allowedValues": []
+              },
+              "priority": {
+                "required": false,
+                "schema": { "type": "priority", "system": "priority" },
+                "name": "Priority",
+                "key": "priority",
+                "hasDefaultValue": true,
+                "operations": ["set"],
+                "allowedValues": [
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/1",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/blocker.svg",
+                    "name": "Blocker",
+                    "id": "1"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/2",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/critical.svg",
+                    "name": "Critical",
+                    "id": "2"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/major.svg",
+                    "name": "Major",
+                    "id": "3"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/4",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/minor.svg",
+                    "name": "Minor",
+                    "id": "4"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/5",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/trivial.svg",
+                    "name": "Trivial",
+                    "id": "5"
+                  }
+                ],
+                "defaultValue": {
+                  "self": "https://test.atlassian.net/rest/api/2/priority/3",
+                  "iconUrl": "https://test.atlassian.net/images/icons/priorities/major.svg",
+                  "name": "Major",
+                  "id": "3"
+                }
+              },
+              "labels": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "string",
+                  "system": "labels"
+                },
+                "name": "Labels",
+                "key": "labels",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/1.0/labels/suggest?query=",
+                "hasDefaultValue": false,
+                "operations": ["add", "set", "remove"]
+              },
+              "customfield_10007": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "string",
+                  "custom": "com.pyxis.greenhopper.jira:gh-sprint",
+                  "customId": 10007
+                },
+                "name": "Sprint",
+                "key": "customfield_10007",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "customfield_10008": {
+                "required": false,
+                "schema": {
+                  "type": "any",
+                  "custom": "com.pyxis.greenhopper.jira:gh-epic-link",
+                  "customId": 10008
+                },
+                "name": "Epic Link",
+                "key": "customfield_10008",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "attachment": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "attachment",
+                  "system": "attachment"
+                },
+                "name": "Attachment",
+                "key": "attachment",
+                "hasDefaultValue": false,
+                "operations": []
+              },
+              "issuelinks": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "issuelinks",
+                  "system": "issuelinks"
+                },
+                "name": "Linked Issues",
+                "key": "issuelinks",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/2/issue/picker?currentProjectId=&showSubTaskParent=true&showSubTasks=true&currentIssueKey=null&query=",
+                "hasDefaultValue": false,
+                "operations": ["add"]
+              },
+              "assignee": {
+                "required": false,
+                "schema": { "type": "user", "system": "assignee" },
+                "name": "Assignee",
+                "key": "assignee",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/latest/user/assignable/search?project=TEST&query=",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              }
+            }
+          },
+          {
+            "self": "https://test.atlassian.net/rest/api/2/issuetype/5",
+            "id": "5",
+            "description": "The sub-task of the issue",
+            "iconUrl": "https://test.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10316&avatarType=issuetype",
+            "name": "Sub-task",
+            "subtask": true,
+            "expand": "fields",
+            "fields": {
+              "summary": {
+                "required": true,
+                "schema": { "type": "string", "system": "summary" },
+                "name": "Summary",
+                "key": "summary",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "issuetype": {
+                "required": true,
+                "schema": { "type": "issuetype", "system": "issuetype" },
+                "name": "Issue Type",
+                "key": "issuetype",
+                "hasDefaultValue": false,
+                "operations": [],
+                "allowedValues": [
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/issuetype/5",
+                    "id": "5",
+                    "description": "The sub-task of the issue",
+                    "iconUrl": "https://test.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10316&avatarType=issuetype",
+                    "name": "Sub-task",
+                    "subtask": true,
+                    "avatarId": 10316
+                  }
+                ]
+              },
+              "parent": {
+                "required": true,
+                "schema": { "type": "issuelink", "system": "parent" },
+                "name": "Parent",
+                "key": "parent",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "components": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "component",
+                  "system": "components"
+                },
+                "name": "Component/s",
+                "key": "components",
+                "hasDefaultValue": false,
+                "operations": ["add", "set", "remove"],
+                "allowedValues": []
+              },
+              "description": {
+                "required": false,
+                "schema": { "type": "string", "system": "description" },
+                "name": "Description",
+                "key": "description",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "project": {
+                "required": true,
+                "schema": { "type": "project", "system": "project" },
+                "name": "Project",
+                "key": "project",
+                "hasDefaultValue": false,
+                "operations": ["set"],
+                "allowedValues": [
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/project/12500",
+                    "id": "12500",
+                    "key": "TEST",
+                    "name": "TEST",
+                    "projectTypeKey": "software",
+                    "avatarUrls": {
+                      "48x48": "https://test.atlassian.net/secure/projectavatar?pid=12500&avatarId=10011",
+                      "24x24": "https://test.atlassian.net/secure/projectavatar?size=small&pid=12500&avatarId=10011",
+                      "16x16": "https://test.atlassian.net/secure/projectavatar?size=xsmall&pid=12500&avatarId=10011",
+                      "32x32": "https://test.atlassian.net/secure/projectavatar?size=medium&pid=12500&avatarId=10011"
+                    }
+                  }
+                ]
+              },
+              "reporter": {
+                "required": true,
+                "schema": { "type": "user", "system": "reporter" },
+                "name": "Reporter",
+                "key": "reporter",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/latest/user/search?query=",
+                "hasDefaultValue": true,
+                "operations": ["set"]
+              },
+              "fixVersions": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "version",
+                  "system": "fixVersions"
+                },
+                "name": "Fix Version/s",
+                "key": "fixVersions",
+                "hasDefaultValue": false,
+                "operations": ["set", "add", "remove"],
+                "allowedValues": []
+              },
+              "priority": {
+                "required": false,
+                "schema": { "type": "priority", "system": "priority" },
+                "name": "Priority",
+                "key": "priority",
+                "hasDefaultValue": true,
+                "operations": ["set"],
+                "allowedValues": [
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/1",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/blocker.svg",
+                    "name": "Blocker",
+                    "id": "1"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/2",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/critical.svg",
+                    "name": "Critical",
+                    "id": "2"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/major.svg",
+                    "name": "Major",
+                    "id": "3"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/4",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/minor.svg",
+                    "name": "Minor",
+                    "id": "4"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/5",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/trivial.svg",
+                    "name": "Trivial",
+                    "id": "5"
+                  }
+                ],
+                "defaultValue": {
+                  "self": "https://test.atlassian.net/rest/api/2/priority/3",
+                  "iconUrl": "https://test.atlassian.net/images/icons/priorities/major.svg",
+                  "name": "Major",
+                  "id": "3"
+                }
+              },
+              "labels": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "string",
+                  "system": "labels"
+                },
+                "name": "Labels",
+                "key": "labels",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/1.0/labels/suggest?query=",
+                "hasDefaultValue": false,
+                "operations": ["add", "set", "remove"]
+              },
+              "customfield_10007": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "string",
+                  "custom": "com.pyxis.greenhopper.jira:gh-sprint",
+                  "customId": 10007
+                },
+                "name": "Sprint",
+                "key": "customfield_10007",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "customfield_10008": {
+                "required": false,
+                "schema": {
+                  "type": "any",
+                  "custom": "com.pyxis.greenhopper.jira:gh-epic-link",
+                  "customId": 10008
+                },
+                "name": "Epic Link",
+                "key": "customfield_10008",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "attachment": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "attachment",
+                  "system": "attachment"
+                },
+                "name": "Attachment",
+                "key": "attachment",
+                "hasDefaultValue": false,
+                "operations": []
+              },
+              "issuelinks": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "issuelinks",
+                  "system": "issuelinks"
+                },
+                "name": "Linked Issues",
+                "key": "issuelinks",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/2/issue/picker?currentProjectId=&showSubTaskParent=true&showSubTasks=true&currentIssueKey=null&query=",
+                "hasDefaultValue": false,
+                "operations": ["add"]
+              },
+              "assignee": {
+                "required": false,
+                "schema": { "type": "user", "system": "assignee" },
+                "name": "Assignee",
+                "key": "assignee",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/latest/user/assignable/search?project=TEST&query=",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              }
+            }
+          },
+          {
+            "self": "https://test.atlassian.net/rest/api/2/issuetype/1",
+            "id": "1",
+            "description": "A problem which impairs or prevents the functions of the product.",
+            "iconUrl": "https://test.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10303&avatarType=issuetype",
+            "name": "Bug",
+            "subtask": false,
+            "expand": "fields",
+            "fields": {
+              "summary": {
+                "required": true,
+                "schema": { "type": "string", "system": "summary" },
+                "name": "Summary",
+                "key": "summary",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "issuetype": {
+                "required": true,
+                "schema": { "type": "issuetype", "system": "issuetype" },
+                "name": "Issue Type",
+                "key": "issuetype",
+                "hasDefaultValue": false,
+                "operations": [],
+                "allowedValues": [
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/issuetype/1",
+                    "id": "1",
+                    "description": "A problem which impairs or prevents the functions of the product.",
+                    "iconUrl": "https://test.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10303&avatarType=issuetype",
+                    "name": "Bug",
+                    "subtask": false,
+                    "avatarId": 10303
+                  }
+                ]
+              },
+              "components": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "component",
+                  "system": "components"
+                },
+                "name": "Component/s",
+                "key": "components",
+                "hasDefaultValue": false,
+                "operations": ["add", "set", "remove"],
+                "allowedValues": []
+              },
+              "description": {
+                "required": false,
+                "schema": { "type": "string", "system": "description" },
+                "name": "Description",
+                "key": "description",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "project": {
+                "required": true,
+                "schema": { "type": "project", "system": "project" },
+                "name": "Project",
+                "key": "project",
+                "hasDefaultValue": false,
+                "operations": ["set"],
+                "allowedValues": [
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/project/12500",
+                    "id": "12500",
+                    "key": "TEST",
+                    "name": "TEST",
+                    "projectTypeKey": "software",
+                    "avatarUrls": {
+                      "48x48": "https://test.atlassian.net/secure/projectavatar?pid=12500&avatarId=10011",
+                      "24x24": "https://test.atlassian.net/secure/projectavatar?size=small&pid=12500&avatarId=10011",
+                      "16x16": "https://test.atlassian.net/secure/projectavatar?size=xsmall&pid=12500&avatarId=10011",
+                      "32x32": "https://test.atlassian.net/secure/projectavatar?size=medium&pid=12500&avatarId=10011"
+                    }
+                  }
+                ]
+              },
+              "reporter": {
+                "required": true,
+                "schema": { "type": "user", "system": "reporter" },
+                "name": "Reporter",
+                "key": "reporter",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/latest/user/search?query=",
+                "hasDefaultValue": true,
+                "operations": ["set"]
+              },
+              "fixVersions": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "version",
+                  "system": "fixVersions"
+                },
+                "name": "Fix Version/s",
+                "key": "fixVersions",
+                "hasDefaultValue": false,
+                "operations": ["set", "add", "remove"],
+                "allowedValues": []
+              },
+              "priority": {
+                "required": false,
+                "schema": { "type": "priority", "system": "priority" },
+                "name": "Priority",
+                "key": "priority",
+                "hasDefaultValue": true,
+                "operations": ["set"],
+                "allowedValues": [
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/1",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/blocker.svg",
+                    "name": "Blocker",
+                    "id": "1"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/2",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/critical.svg",
+                    "name": "Critical",
+                    "id": "2"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/major.svg",
+                    "name": "Major",
+                    "id": "3"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/4",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/minor.svg",
+                    "name": "Minor",
+                    "id": "4"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/5",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/trivial.svg",
+                    "name": "Trivial",
+                    "id": "5"
+                  }
+                ],
+                "defaultValue": {
+                  "self": "https://test.atlassian.net/rest/api/2/priority/3",
+                  "iconUrl": "https://test.atlassian.net/images/icons/priorities/major.svg",
+                  "name": "Major",
+                  "id": "3"
+                }
+              },
+              "labels": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "string",
+                  "system": "labels"
+                },
+                "name": "Labels",
+                "key": "labels",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/1.0/labels/suggest?query=",
+                "hasDefaultValue": false,
+                "operations": ["add", "set", "remove"]
+              },
+              "environment": {
+                "required": false,
+                "schema": { "type": "string", "system": "environment" },
+                "name": "Environment",
+                "key": "environment",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "customfield_10007": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "string",
+                  "custom": "com.pyxis.greenhopper.jira:gh-sprint",
+                  "customId": 10007
+                },
+                "name": "Sprint",
+                "key": "customfield_10007",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "customfield_10008": {
+                "required": false,
+                "schema": {
+                  "type": "any",
+                  "custom": "com.pyxis.greenhopper.jira:gh-epic-link",
+                  "customId": 10008
+                },
+                "name": "Epic Link",
+                "key": "customfield_10008",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "attachment": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "attachment",
+                  "system": "attachment"
+                },
+                "name": "Attachment",
+                "key": "attachment",
+                "hasDefaultValue": false,
+                "operations": []
+              },
+              "versions": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "version",
+                  "system": "versions"
+                },
+                "name": "Affects Version/s",
+                "key": "versions",
+                "hasDefaultValue": false,
+                "operations": ["set", "add", "remove"],
+                "allowedValues": []
+              },
+              "issuelinks": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "issuelinks",
+                  "system": "issuelinks"
+                },
+                "name": "Linked Issues",
+                "key": "issuelinks",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/2/issue/picker?currentProjectId=&showSubTaskParent=true&showSubTasks=true&currentIssueKey=null&query=",
+                "hasDefaultValue": false,
+                "operations": ["add"]
+              },
+              "assignee": {
+                "required": false,
+                "schema": { "type": "user", "system": "assignee" },
+                "name": "Assignee",
+                "key": "assignee",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/latest/user/assignable/search?project=TEST&query=",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              }
+            }
+          },
+          {
+            "self": "https://test.atlassian.net/rest/api/2/issuetype/6",
+            "id": "6",
+            "description": "A big user story that needs to be broken down. Created by JIRA Software - do not edit or delete.",
+            "iconUrl": "https://test.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10307&avatarType=issuetype",
+            "name": "Epic",
+            "subtask": false,
+            "expand": "fields",
+            "fields": {
+              "summary": {
+                "required": true,
+                "schema": { "type": "string", "system": "summary" },
+                "name": "Summary",
+                "key": "summary",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "issuetype": {
+                "required": true,
+                "schema": { "type": "issuetype", "system": "issuetype" },
+                "name": "Issue Type",
+                "key": "issuetype",
+                "hasDefaultValue": false,
+                "operations": [],
+                "allowedValues": [
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/issuetype/6",
+                    "id": "6",
+                    "description": "A big user story that needs to be broken down. Created by JIRA Software - do not edit or delete.",
+                    "iconUrl": "https://test.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10307&avatarType=issuetype",
+                    "name": "Epic",
+                    "subtask": false,
+                    "avatarId": 10307
+                  }
+                ]
+              },
+              "components": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "component",
+                  "system": "components"
+                },
+                "name": "Component/s",
+                "key": "components",
+                "hasDefaultValue": false,
+                "operations": ["add", "set", "remove"],
+                "allowedValues": []
+              },
+              "description": {
+                "required": false,
+                "schema": { "type": "string", "system": "description" },
+                "name": "Description",
+                "key": "description",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "project": {
+                "required": true,
+                "schema": { "type": "project", "system": "project" },
+                "name": "Project",
+                "key": "project",
+                "hasDefaultValue": false,
+                "operations": ["set"],
+                "allowedValues": [
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/project/12500",
+                    "id": "12500",
+                    "key": "TEST",
+                    "name": "TEST",
+                    "projectTypeKey": "software",
+                    "avatarUrls": {
+                      "48x48": "https://test.atlassian.net/secure/projectavatar?pid=12500&avatarId=10011",
+                      "24x24": "https://test.atlassian.net/secure/projectavatar?size=small&pid=12500&avatarId=10011",
+                      "16x16": "https://test.atlassian.net/secure/projectavatar?size=xsmall&pid=12500&avatarId=10011",
+                      "32x32": "https://test.atlassian.net/secure/projectavatar?size=medium&pid=12500&avatarId=10011"
+                    }
+                  }
+                ]
+              },
+              "reporter": {
+                "required": true,
+                "schema": { "type": "user", "system": "reporter" },
+                "name": "Reporter",
+                "key": "reporter",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/latest/user/search?query=",
+                "hasDefaultValue": true,
+                "operations": ["set"]
+              },
+              "fixVersions": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "version",
+                  "system": "fixVersions"
+                },
+                "name": "Fix Version/s",
+                "key": "fixVersions",
+                "hasDefaultValue": false,
+                "operations": ["set", "add", "remove"],
+                "allowedValues": []
+              },
+              "priority": {
+                "required": false,
+                "schema": { "type": "priority", "system": "priority" },
+                "name": "Priority",
+                "key": "priority",
+                "hasDefaultValue": true,
+                "operations": ["set"],
+                "allowedValues": [
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/1",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/blocker.svg",
+                    "name": "Blocker",
+                    "id": "1"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/2",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/critical.svg",
+                    "name": "Critical",
+                    "id": "2"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/major.svg",
+                    "name": "Major",
+                    "id": "3"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/4",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/minor.svg",
+                    "name": "Minor",
+                    "id": "4"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/5",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/trivial.svg",
+                    "name": "Trivial",
+                    "id": "5"
+                  }
+                ],
+                "defaultValue": {
+                  "self": "https://test.atlassian.net/rest/api/2/priority/3",
+                  "iconUrl": "https://test.atlassian.net/images/icons/priorities/major.svg",
+                  "name": "Major",
+                  "id": "3"
+                }
+              },
+              "labels": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "string",
+                  "system": "labels"
+                },
+                "name": "Labels",
+                "key": "labels",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/1.0/labels/suggest?query=",
+                "hasDefaultValue": false,
+                "operations": ["add", "set", "remove"]
+              },
+              "customfield_10007": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "string",
+                  "custom": "com.pyxis.greenhopper.jira:gh-sprint",
+                  "customId": 10007
+                },
+                "name": "Sprint",
+                "key": "customfield_10007",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "customfield_10008": {
+                "required": false,
+                "schema": {
+                  "type": "any",
+                  "custom": "com.pyxis.greenhopper.jira:gh-epic-link",
+                  "customId": 10008
+                },
+                "name": "Epic Link",
+                "key": "customfield_10008",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "customfield_10009": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "custom": "com.pyxis.greenhopper.jira:gh-epic-label",
+                  "customId": 10009
+                },
+                "name": "Epic Name",
+                "key": "customfield_10009",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "attachment": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "attachment",
+                  "system": "attachment"
+                },
+                "name": "Attachment",
+                "key": "attachment",
+                "hasDefaultValue": false,
+                "operations": []
+              },
+              "issuelinks": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "issuelinks",
+                  "system": "issuelinks"
+                },
+                "name": "Linked Issues",
+                "key": "issuelinks",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/2/issue/picker?currentProjectId=&showSubTaskParent=true&showSubTasks=true&currentIssueKey=null&query=",
+                "hasDefaultValue": false,
+                "operations": ["add"]
+              },
+              "assignee": {
+                "required": false,
+                "schema": { "type": "user", "system": "assignee" },
+                "name": "Assignee",
+                "key": "assignee",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/latest/user/assignable/search?project=TEST&query=",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              }
+            }
+          },
+          {
+            "self": "https://test.atlassian.net/rest/api/2/issuetype/7",
+            "id": "7",
+            "description": "A user story. Created by JIRA Software - do not edit or delete.",
+            "iconUrl": "https://test.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10315&avatarType=issuetype",
+            "name": "Story",
+            "subtask": false,
+            "expand": "fields",
+            "fields": {
+              "summary": {
+                "required": true,
+                "schema": { "type": "string", "system": "summary" },
+                "name": "Summary",
+                "key": "summary",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "issuetype": {
+                "required": true,
+                "schema": { "type": "issuetype", "system": "issuetype" },
+                "name": "Issue Type",
+                "key": "issuetype",
+                "hasDefaultValue": false,
+                "operations": [],
+                "allowedValues": [
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/issuetype/7",
+                    "id": "7",
+                    "description": "A user story. Created by JIRA Software - do not edit or delete.",
+                    "iconUrl": "https://test.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10315&avatarType=issuetype",
+                    "name": "Story",
+                    "subtask": false,
+                    "avatarId": 10315
+                  }
+                ]
+              },
+              "components": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "component",
+                  "system": "components"
+                },
+                "name": "Component/s",
+                "key": "components",
+                "hasDefaultValue": false,
+                "operations": ["add", "set", "remove"],
+                "allowedValues": []
+              },
+              "description": {
+                "required": false,
+                "schema": { "type": "string", "system": "description" },
+                "name": "Description",
+                "key": "description",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "project": {
+                "required": true,
+                "schema": { "type": "project", "system": "project" },
+                "name": "Project",
+                "key": "project",
+                "hasDefaultValue": false,
+                "operations": ["set"],
+                "allowedValues": [
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/project/12500",
+                    "id": "12500",
+                    "key": "TEST",
+                    "name": "TEST",
+                    "projectTypeKey": "software",
+                    "avatarUrls": {
+                      "48x48": "https://test.atlassian.net/secure/projectavatar?pid=12500&avatarId=10011",
+                      "24x24": "https://test.atlassian.net/secure/projectavatar?size=small&pid=12500&avatarId=10011",
+                      "16x16": "https://test.atlassian.net/secure/projectavatar?size=xsmall&pid=12500&avatarId=10011",
+                      "32x32": "https://test.atlassian.net/secure/projectavatar?size=medium&pid=12500&avatarId=10011"
+                    }
+                  }
+                ]
+              },
+              "reporter": {
+                "required": true,
+                "schema": { "type": "user", "system": "reporter" },
+                "name": "Reporter",
+                "key": "reporter",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/latest/user/search?query=",
+                "hasDefaultValue": true,
+                "operations": ["set"]
+              },
+              "fixVersions": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "version",
+                  "system": "fixVersions"
+                },
+                "name": "Fix Version/s",
+                "key": "fixVersions",
+                "hasDefaultValue": false,
+                "operations": ["set", "add", "remove"],
+                "allowedValues": []
+              },
+              "priority": {
+                "required": false,
+                "schema": { "type": "priority", "system": "priority" },
+                "name": "Priority",
+                "key": "priority",
+                "hasDefaultValue": true,
+                "operations": ["set"],
+                "allowedValues": [
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/1",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/blocker.svg",
+                    "name": "Blocker",
+                    "id": "1"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/2",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/critical.svg",
+                    "name": "Critical",
+                    "id": "2"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/major.svg",
+                    "name": "Major",
+                    "id": "3"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/4",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/minor.svg",
+                    "name": "Minor",
+                    "id": "4"
+                  },
+                  {
+                    "self": "https://test.atlassian.net/rest/api/2/priority/5",
+                    "iconUrl": "https://test.atlassian.net/images/icons/priorities/trivial.svg",
+                    "name": "Trivial",
+                    "id": "5"
+                  }
+                ],
+                "defaultValue": {
+                  "self": "https://test.atlassian.net/rest/api/2/priority/3",
+                  "iconUrl": "https://test.atlassian.net/images/icons/priorities/major.svg",
+                  "name": "Major",
+                  "id": "3"
+                }
+              },
+              "labels": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "string",
+                  "system": "labels"
+                },
+                "name": "Labels",
+                "key": "labels",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/1.0/labels/suggest?query=",
+                "hasDefaultValue": false,
+                "operations": ["add", "set", "remove"]
+              },
+              "customfield_10007": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "string",
+                  "custom": "com.pyxis.greenhopper.jira:gh-sprint",
+                  "customId": 10007
+                },
+                "name": "Sprint",
+                "key": "customfield_10007",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "customfield_10008": {
+                "required": false,
+                "schema": {
+                  "type": "any",
+                  "custom": "com.pyxis.greenhopper.jira:gh-epic-link",
+                  "customId": 10008
+                },
+                "name": "Epic Link",
+                "key": "customfield_10008",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              },
+              "attachment": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "attachment",
+                  "system": "attachment"
+                },
+                "name": "Attachment",
+                "key": "attachment",
+                "hasDefaultValue": false,
+                "operations": []
+              },
+              "issuelinks": {
+                "required": false,
+                "schema": {
+                  "type": "array",
+                  "items": "issuelinks",
+                  "system": "issuelinks"
+                },
+                "name": "Linked Issues",
+                "key": "issuelinks",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/2/issue/picker?currentProjectId=&showSubTaskParent=true&showSubTasks=true&currentIssueKey=null&query=",
+                "hasDefaultValue": false,
+                "operations": ["add"]
+              },
+              "assignee": {
+                "required": false,
+                "schema": { "type": "user", "system": "assignee" },
+                "name": "Assignee",
+                "key": "assignee",
+                "autoCompleteUrl": "https://test.atlassian.net/rest/api/latest/user/assignable/search?project=TEST&query=",
+                "hasDefaultValue": false,
+                "operations": ["set"]
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "rawHeaders": [
+    "Server",
+    "Atlassian Proxy/1.13.6.2",
+    "Vary",
+    "Accept-Encoding",
+    "Cache-Control",
+    "no-cache, no-store, no-transform",
+    "Content-Type",
+    "application/json;charset=UTF-8",
+    "Strict-Transport-Security",
+    "max-age=315360000; includeSubDomains; preload",
+    "Date",
+    "Mon, 01 Oct 2018 08:10:00 GMT",
+    "ATL-TraceId",
+    "c01367cc34945d7f",
+    "X-AREQUESTID",
+    "c083cc94-0f3b-4af1-b144-a6fa888b7c9a",
+    "X-XSS-Protection",
+    "1; mode=block",
+    "Transfer-Encoding",
+    "chunked",
+    "ATL-TCS-Time",
+    "Cache Hit",
+    "X-AUSERNAME",
+    "nikolas",
+    "X-Content-Type-Options",
+    "nosniff",
+    "Connection",
+    "close",
+    "Set-Cookie",
+    "atlassian.xsrf.token=BELL-IA0J-OZ8U-S91G_d923affe745d8a18390499eacf9f7b5a614b32db_lin; Path=/; Secure",
+    "X-Seraph-LoginReason",
+    "OK"
+  ],
+  "reqheaders": {
+    "accept": "application/json, text/plain, */*",
+    "host": "test.atlassian.net",
+    "authorization": "Basic bmlrb2xhc0B3ZWJ0cmFpbHMuZ3I6b25hcHAzcG91bGFraWE="
+  }
+}

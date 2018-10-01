@@ -1,0 +1,66 @@
+{
+  "scope": "https://test.atlassian.net:443",
+  "method": "get",
+  "path": "/rest/api/2/search?jql=project%3D%22TEST%22&fields=key",
+  "body": "",
+  "status": 200,
+  "response": {
+    "expand": "schema,names",
+    "startAt": 0,
+    "maxResults": 50,
+    "total": 2,
+    "issues": [
+      {
+        "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+        "id": "42877",
+        "self": "https://test.atlassian.net/rest/api/2/issue/42877",
+        "key": "TEST-643"
+      },
+      {
+        "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+        "id": "42876",
+        "self": "https://test.atlassian.net/rest/api/2/issue/42876",
+        "key": "TEST-642"
+      }
+    ]
+  },
+  "rawHeaders": [
+    "Server",
+    "Atlassian Proxy/1.13.6.2",
+    "Vary",
+    "Accept-Encoding",
+    "Cache-Control",
+    "no-cache, no-store, no-transform",
+    "Content-Type",
+    "application/json;charset=UTF-8",
+    "Strict-Transport-Security",
+    "max-age=315360000; includeSubDomains; preload",
+    "Date",
+    "Fri, 28 Sep 2018 14:57:34 GMT",
+    "ATL-TraceId",
+    "bd1bf0a7f6fe9c18",
+    "X-AREQUESTID",
+    "4ffcf0ff-93c1-4539-bfc8-0ca9dc7be296",
+    "X-XSS-Protection",
+    "1; mode=block",
+    "Transfer-Encoding",
+    "chunked",
+    "ATL-TCS-Time",
+    "Cache Hit",
+    "X-AUSERNAME",
+    "nikolas",
+    "X-Content-Type-Options",
+    "nosniff",
+    "Connection",
+    "close",
+    "Set-Cookie",
+    "atlassian.xsrf.token=BELL-IA0J-OZ8U-S91G_b05c28f86f32a7f5c53df9f67dbf15a3acaa2010_lin; Path=/; Secure",
+    "X-Seraph-LoginReason",
+    "OK"
+  ],
+  "reqheaders": {
+    "accept": "application/json, text/plain, */*",
+    "host": "test.atlassian.net",
+    "authorization": "Basic bmlrb2xhc0B3ZWJ0cmFpbHMuZ3I6b25hcHAzcG91bGFraWE="
+  }
+}

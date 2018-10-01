@@ -1,0 +1,61 @@
+{
+  "scope": "https://test.atlassian.net:443",
+  "method": "post",
+  "path": "/rest/api/2/issue",
+  "body": {
+    "fields": {
+      "summary": "ISSUE 1",
+      "issuetype": { "name": "Task" },
+      "priority": { "name": "Major" },
+      "reporter": { "name": "nikolas" },
+      "description": "This is a test issue",
+      "labels": ["test-label-3"],
+      "project": { "key": "TEST" }
+    }
+  },
+  "status": 201,
+  "response": {
+    "id": "42875",
+    "key": "TEST-641",
+    "self": "https://test.atlassian.net/rest/api/2/issue/42875"
+  },
+  "rawHeaders": [
+    "Server",
+    "Atlassian Proxy/1.13.6.2",
+    "Cache-Control",
+    "no-cache, no-store, no-transform",
+    "Content-Type",
+    "application/json;charset=UTF-8",
+    "Strict-Transport-Security",
+    "max-age=315360000; includeSubDomains; preload",
+    "Date",
+    "Fri, 28 Sep 2018 14:51:26 GMT",
+    "ATL-TraceId",
+    "744bf517af1bee09",
+    "X-AREQUESTID",
+    "818d91fa-a884-4b20-b5ec-d44982f8d324",
+    "X-XSS-Protection",
+    "1; mode=block",
+    "Transfer-Encoding",
+    "chunked",
+    "ATL-TCS-Time",
+    "Cache Hit",
+    "X-AUSERNAME",
+    "nikolas",
+    "X-Content-Type-Options",
+    "nosniff",
+    "Connection",
+    "close",
+    "Set-Cookie",
+    "atlassian.xsrf.token=BELL-IA0J-OZ8U-S91G_d9763751e7ee477107fa837c5551693fb4607ebb_lin; Path=/; Secure",
+    "X-Seraph-LoginReason",
+    "OK"
+  ],
+  "reqheaders": {
+    "accept": "application/json, text/plain, */*",
+    "content-type": "application/json;charset=utf-8",
+    "content-length": 206,
+    "host": "test.atlassian.net",
+    "authorization": "Basic bmlrb2xhc0B3ZWJ0cmFpbHMuZ3I6b25hcHAzcG91bGFraWE="
+  }
+}
